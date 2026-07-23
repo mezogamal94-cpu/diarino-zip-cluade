@@ -9,7 +9,8 @@ import { useCurrentUser } from "./useCurrentUser";
 async function fetchFavoriteIds(userId: string, column: "property_id" | "request_id"): Promise<Set<string>> {
   const { data, error } = await supabase.from("favorites").select(column).eq("user_id", userId).not(column, "is", null);
   if (error) throw error;
-  return new Set((data || []).map((r) => (r as any)[column] as string));
+  const rows = (data ?? []) as unknown as Record<string, string>[];
+  return new Set(rows.map((r) => r[column]));
 }
 
 function useFavoriteSet(column: "property_id" | "request_id") {

@@ -16,7 +16,6 @@ import { NotificationsDropdown } from "../../components/notifications/Notificati
 import { useNotifications } from "../../lib/hooks/useNotifications";
 import { useFavorites } from "../../lib/hooks/useFavorites";
 import { useMyContent } from "../../lib/hooks/useMyContent";
-import { useMyProperties } from "../../lib/hooks/useProperties";
 import { useSyncProcessingRecordings } from "../../lib/hooks/useLiveRecordingStatus";
 import { AdActionSheet } from "../../components/account/AdActionSheet";
 import { LiveActionSheet } from "../../components/account/LiveActionSheet";

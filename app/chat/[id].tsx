@@ -154,9 +154,9 @@ export default function ChatScreen() {
             {!!item.text && (
               <Text style={[styles.bubbleText, item.from === "me" && styles.bubbleTextSent]}>{item.text}</Text>
             )}
-            {!!item.images?.length && (
+            {item.images && item.images.length > 0 && (
               <View style={styles.imgGrid}>
-                {item.images.slice(0, 4).map((uri, i) => (
+                {item.images.slice(0, 4).map((uri: string, i: number) => (
                   <Image key={i} source={{ uri }} style={styles.imgCell} />
                 ))}
               </View>

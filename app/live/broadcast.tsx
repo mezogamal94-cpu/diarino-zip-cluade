@@ -128,7 +128,7 @@ function BroadcasterLiveView({
   const tracks = useTracks([Track.Source.Camera]);
   const localTrackRef = tracks.find((tr) => tr.participant.isLocal && isTrackReference(tr));
   const { comments, sendComment } = useLiveComments(displayName);
-  const { isMuted } = useIsMuted({ source: Track.Source.Microphone, participant: room?.localParticipant });
+  const isMuted = useIsMuted({ source: Track.Source.Microphone, participant: room?.localParticipant });
 
   const startedAtRef = useRef(Date.now());
   const peakViewersRef = useRef(0);

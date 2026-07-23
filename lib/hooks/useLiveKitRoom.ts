@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
-import { RoomEvent, useRoomContext } from "@livekit/react-native";
+import { useRoomContext } from "@livekit/react-native";
+import { RoomEvent } from "livekit-client";
 import { fetchLiveKitToken, LiveKitConnectionInfo } from "../livekit";
 import { LiveComment } from "../../components/live/LiveCommentsOverlay";
 
