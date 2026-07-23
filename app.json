@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "Diarino",
+    "slug": "diarino",
+    "scheme": "diarino",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "plugins": [
+      "expo-router",
+      [
+        "@livekit/react-native-expo-plugin",
+        {
+          "android": { "audioType": "communication" }
+        }
+      ],
+      "@config-plugins/react-native-webrtc",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "يحتاج ديارينو للوصول إلى الكاميرا لبدء بث مباشر لعقارك.",
+          "microphonePermission": "يحتاج ديارينو للوصول إلى الميكروفون أثناء البث المباشر."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "يحتاج ديارينو للوصول لموقعك لعرض العقارات القريبة منك ضمن نطاق تختاره."
+        }
+      ]
+    ],
+    "ios": {
+      "bundleIdentifier": "com.diarino.app",
+      "infoPlist": {
+        "NSCameraUsageDescription": "يحتاج ديارينو للوصول إلى الكاميرا لبدء بث مباشر لعقارك.",
+        "NSMicrophoneUsageDescription": "يحتاج ديارينو للوصول إلى الميكروفون أثناء البث المباشر ولتسجيل الفيديوهات.",
+        "NSLocationWhenInUseUsageDescription": "يحتاج ديارينو للوصول لموقعك لعرض العقارات القريبة منك ضمن نطاق تختاره."
+      }
+    },
+    "android": {
+      "package": "com.diarino.app",
+      "permissions": [
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "REPLACE_WITH_YOUR_ANDROID_MAPS_API_KEY"
+        }
+      }
+    }
+  }
+}
